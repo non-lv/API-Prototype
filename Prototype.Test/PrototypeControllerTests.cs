@@ -55,7 +55,7 @@ namespace Prototype.Test
         [Fact]
         public void GetThread_ReturnsNothing()
         {
-            var result = controller.GetThread(context.Threads.Last().Id + 1);
+            var result = controller.GetThread((context.Threads.LastOrDefault()?.Id ?? 0) + 1);
             Assert.Null(result);
 
         }
